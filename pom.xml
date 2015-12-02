@@ -376,6 +376,12 @@
                                 <artifactId>gameoflife-build</artifactId>
                                 <version>${project.version}</version>
                             </dependency>
+<dependency>
+    <groupId>org.jenkins-ci.plugins</groupId>
+    <artifactId>clamav</artifactId>
+    <version>0.2.1</version>
+</dependency>
+
                         </dependencies>
                     </plugin>
                 </plugins>
@@ -415,6 +421,7 @@
                                 <artifactId>gameoflife-build</artifactId>
                                 <version>${project.version}</version>
                             </dependency>
+
                         </dependencies>
                     </plugin>
                 </plugins>
@@ -426,6 +433,11 @@
                         <artifactId>cobertura-maven-plugin</artifactId>
                         <version>${cobertura.version}</version>
                         <configuration>
+			    <instrumentation>
+				<includes>
+				  <include>**/*.class</include>
+				</includes>
+			    </instrumentation>
                             <formats>
                                 <format>html</format>
                                 <format>xml</format>
